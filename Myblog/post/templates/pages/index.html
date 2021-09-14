@@ -1,0 +1,41 @@
+{% extends 'layout/base.html' %}
+
+{% block title%} Home {% endblock title %}
+
+
+
+  {% block body%}
+
+    	<h1 class="text-center">{{header}}</h1>
+    	<ul>
+    		<div class="row row-cols-md-3 row-cols-sm-2">   			
+    		
+    		{%for post in posts%}
+    			<div class="col">
+    				<div class="card mb-3 shadow">
+    					{% if post.image%}
+    					     <img class="card-img-top" src="{{post.image.url}}" alt="image">
+    					{%else%}
+    					<img class="card-img-top" src="https://via.placeholder.com/150" alt="image">
+    						
+    					{%endif%}
+    				<div class="card-body">
+
+    					 <h5 class="card-title">
+    					 	{{post.title}}
+    					 </h5>
+    					 <p class="card-text">
+    					 	{{post.content|truncatechars:"20"}}
+    					 </p>
+    					 <a href="{%url 'post:show' post.id %}" class="btn btn-primary">details</a>
+    					 <a href="{%url 'post:update' post.id %}" class="btn btn-info">Update</a>
+    			 	
+    				</div>
+    			
+    		    </div>
+    			</div>
+    		{%endfor%}
+    		</div>
+    	</ul>
+    	
+   {%endblock body%}

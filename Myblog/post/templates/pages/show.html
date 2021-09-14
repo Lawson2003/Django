@@ -1,0 +1,22 @@
+{%extends 'layout/base.html'%}
+
+{%block title%}
+Details
+{%endblock title%}
+
+{%block body%}
+<h1>
+  Details
+</h1>
+<div class="card mb-3">
+	{% if post.image%}
+     <img class="card-img-top" src="{{post.image.url}}" alt="image" width="50%">
+	{%else%}
+	<img class="card-img-top" src="https://via.placeholder.com/150" alt="image">
+	{%endif%}	
+  <div class="card-body">
+    <h5 class="card-title">{{post.title}}</h5>
+    <p class="card-text">{{post.content}}</p>
+  </div>
+</div>
+{%endblock body%}

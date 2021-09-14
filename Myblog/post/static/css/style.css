@@ -1,0 +1,13 @@
+*{
+	font-family: 'PT Serif', serif;
+}
+.navbar{
+	background-image: linear-gradient(to left, #4090ff,#40afff);
+}
+.btn-primary{
+	background-image: linear-gradient(to left, #4090ff,#40afff);
+   border: none;
+}
+.footer{
+	background-image: linear-gradient(to left, #4090ff,#40afff);
+}

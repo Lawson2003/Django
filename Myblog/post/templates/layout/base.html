@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital@1&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+	<title>{% block title%}{% endblock title%} | blog</title>
+
+	{% block styles%}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">
+    {% endblock styles%}
+</head>
+<body>
+	{% include 'layout/partials/header.html' %}
+   <div class="container">
+   	 {% block body%}
+
+    {%endblock body%}
+   </div>
+
+   <div class="text-center footer fixed-bottom">
+   	 {% include 'layout/partials/footer.html' %}
+   </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+</html>

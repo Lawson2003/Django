@@ -1,0 +1,42 @@
+{% extends 'layout/base.html' %}
+
+{% block title%} New Post {% endblock title %}
+
+{% block body%}
+<h1 class=text-center mt-3>New Post</h1>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4s">
+			<form action="" method="post" class="form" enctype="multipart/form-data">
+				  {%csrf_token%}
+				{% if form.subject.errors%}
+					{%for error in form.subject.errors%}
+					   <li rol='alert'><strong>{{error}</strong></li>
+					 {%endfor%}
+				 {%endif%}
+				
+				  {%for field in form%}
+				  		<div class="form-group mb-3">
+				  			{{field.label_tag}} {% if field.field_required%}<span class="required"></span>{%endif%}
+				  			{{field}}
+				  			{%if field.help_text%}
+				  			    <p class="help">{{field.help_text}}</p>
+				  			{%endif%}
+				  			{%if field.errors%}
+				  				{%for err in field.errors%}
+				  				    <p class="text-danger">{{err}}</p>	
+				  				{%endfor%}
+				  			{%endif%}
+				  		</div>
+				  {%endfor%}
+				  <input class="btn btn-primary mb-3" type="submit" name="Create">
+			</form>
+
+		</div>
+	</div>
+	<div class="col-md-4">
+		
+	</div>
+</div>
+
+{%endblock body%}
